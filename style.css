@@ -902,6 +902,10 @@ footer {
     margin-bottom: 30px;
 }
 
+.full-width {
+    grid-column: span 2;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -1050,18 +1054,65 @@ footer {
     font-size: 24px;
 }
 
-/* Responsive Utilities */
 @media (max-width: 992px) {
+    .management-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Mobile Navigation */
+    .mobile-menu-btn {
+        display: block;
+        color: var(--primary-navy);
+        z-index: 1001;
+    }
+
     .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-navy);
+    }
+
+    .header-cta {
         display: none;
     }
 
-    .mobile-menu-btn {
-        display: block;
+    .about-flex {
+        flex-direction: column;
+        gap: 40px;
     }
 
-    .hero h1 {
-        font-size: 2.8rem;
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-visual {
+        order: -1;
     }
 
     .benefits-grid,
@@ -1070,8 +1121,8 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .hero h1 {
+        font-size: 2.8rem;
     }
 
     .diff-container {
@@ -1082,8 +1133,8 @@ footer {
         transform: scale(1);
     }
 
-    .management-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .full-width {
+        grid-column: span 1;
     }
 }
 
